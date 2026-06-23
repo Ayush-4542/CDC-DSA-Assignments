@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
     public int strStr(String haystack, String needle) {
         StringBuilder sb = new StringBuilder();
 
@@ -23,4 +23,26 @@ class Solution {
         return -1;
         
     }
+} */
+
+// better understanding 
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if(haystack.length()>=needle.length()){
+             for(int i=0;i<=haystack.length()-needle.length();i++){
+                int start=0;
+                while(haystack.charAt(i+start)==needle.charAt(start)){
+                    start++;
+                    if(start==needle.length()){
+                        return i;
+                    }
+
+                }
+
+        }
+        
+        }
+        return -1;
+    }
 }
+
