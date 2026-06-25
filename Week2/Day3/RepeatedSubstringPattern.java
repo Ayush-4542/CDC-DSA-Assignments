@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
     public boolean repeatedSubstringPattern(String s) {
         for(int i=0;i<s.length()/2;i++){
              StringBuilder sb = new StringBuilder();
@@ -28,3 +28,29 @@ class Solution {
         
     }
 }
+*/
+// optimized code
+class Solution {
+    public boolean repeatedSubstringPattern(String s) {
+        for(int len=1;len<=s.length()/2;len++){
+            if(s.length()%len!=0){
+                continue;
+            }
+            boolean isPossible=true;
+            for(int i=len;i<s.length();i++){
+                if(s.charAt(i)!=s.charAt(i%len)){
+                    isPossible=false;
+                    break;
+                }
+            }
+            if(isPossible){
+                return true;
+            }
+
+
+        }
+        return false;
+       
+    }
+}
+
